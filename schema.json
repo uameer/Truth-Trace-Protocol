@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org",
+  "title": "Truth-Trace Verified Fact",
+  "description": "Standardized metadata for anchoring AI reasoning to ground-truth evidence.",
+  "type": "object",
+  "properties": {
+    "claim": {
+      "type": "string",
+      "description": "The specific factual assertion made by the AI Agent."
+    },
+    "provenance_type": {
+      "type": "string",
+      "enum": ["Liveness_API", "Signed_IoT", "Human_Audit", "Cryptographic_Proof"],
+      "description": "The method used to verify the reality of the claim."
+    },
+    "source_endpoint": {
+      "type": "string",
+      "format": "uri",
+      "description": "The direct URL or API endpoint where the truth was fetched."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The exact moment the fact was verified (prevents 'Stale Data' decay)."
+    },
+    "reasoning_entropy": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "The 0.12-bit entropy score at the time of assertion (Logic-Gated Verification)."
+    },
+    "integrity_hash": {
+      "type": "string",
+      "description": "A SHA-256 hash ensuring the fact hasn't been altered by downstream agents."
+    }
+  },
+  "required": ["claim", "provenance_type", "source_endpoint", "timestamp", "integrity_hash"]
+}
