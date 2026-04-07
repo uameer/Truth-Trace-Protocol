@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Truth-Trace Verified Fact",
   "description": "Standardized metadata for anchoring AI reasoning to ground-truth evidence.",
   "type": "object",
@@ -21,15 +21,17 @@
     "timestamp": {
       "type": "string",
       "format": "date-time",
-      "description": "The exact moment the fact was verified (prevents 'Stale Data' decay)."
+      "description": "The exact moment the fact was verified."
     },
     "model_uncertainty": {
       "type": "number",
-      "description": "Self-reported confidence score from generating model (0-1)"
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Self-reported confidence score from generating model (0-1)."
     },
     "integrity_hash": {
       "type": "string",
-      "description": "A SHA-256 hash ensuring the fact hasn't been altered by downstream agents."
+      "description": "SHA-256 hash ensuring the fact hasn't been altered by downstream agents."
     }
   },
   "required": ["claim", "provenance_type", "source_endpoint", "timestamp", "integrity_hash"]
