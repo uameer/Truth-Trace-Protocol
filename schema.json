@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org",
+  "$schema": "http://json-schema.org/draft-07/schema#"
   "title": "Truth-Trace Verified Fact",
   "description": "Standardized metadata for anchoring AI reasoning to ground-truth evidence.",
   "type": "object",
@@ -23,11 +23,9 @@
       "format": "date-time",
       "description": "The exact moment the fact was verified (prevents 'Stale Data' decay)."
     },
-    "reasoning_entropy": {
+    "model_uncertainty": {
       "type": "number",
-      "minimum": 0,
-      "maximum": 1,
-      "description": "The 0.12-bit entropy score at the time of assertion (Logic-Gated Verification)."
+      "description": "Self-reported confidence score from generating model (0-1)"
     },
     "integrity_hash": {
       "type": "string",
