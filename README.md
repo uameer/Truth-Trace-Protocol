@@ -1,27 +1,20 @@
 # Truth-Trace Protocol (v0.1-alpha)
-> **The Cryptographic Provenance Standard for Agentic Scaling**
+> A lightweight metadata standard for anchoring AI outputs 
+> to verifiable ground-truth sources.
 
----
+## The Problem
+As AI-generated content scales, training data provenance 
+becomes critical. Without source verification, models 
+train on unverifiable outputs — degrading reasoning quality 
+over time.
 
-## 🚩 The Problem: The "Synthetic Decay" Wall
-As Jensen Huang’s "Agentic Scaling" takes over, 90% of digital information will be AI-generated. Without a standard for **Ground Truth**, future models will train on "AI-Waste," leading to **Model Collapse** and the death of reasoning.
+## What This Is
+A JSON schema standard for attaching cryptographic 
+provenance to agentic outputs. Not a full system — 
+a interoperability spec.
 
-## 💡 The Solution: Verifiable Provenance
-`Truth-Trace` is a neutral metadata standard that attaches a **"Reasoning Signature"** to every agentic output. 
-
-### **Core Specification:**
-*   **The Reality Handshake:** Every fact must be anchored to a "Verified Source" (Live API, Signed IoT Sensor, or Multi-Party Human Audit).
-*   **Entropy Watermarking:** Differentiating "Original Human Insight" from "High-Entropy AI Synthesis" at the point of creation.
-*   **The Audit Ledger:** A lightweight, tamper-proof log of *where* the information came from before the AI processed it.
-
-## 📊 The Strategic Value
-
-
-| Feature | Current AI Data | **Truth-Trace Data** |
-| :--- | :--- | :--- |
-| **Trust Level** | Probabilistic (Guessing) | **Deterministic (Verified)** |
-| **Model Value** | Low (Risk of Collapse) | **High (Training Grade)** |
-| **Compliance** | Non-existent | **Audit-Ready (EU AI Act v2)** |
-
----
-*Ensuring the AI Factory runs on 'Refined Fuel,' not 'Synthetic Waste.'*
+## Status
+- [x] Schema defined
+- [x] Reference implementation in Logic-Trace medical-admin brick
+- [ ] Validator script
+- [ ] Python SDK
